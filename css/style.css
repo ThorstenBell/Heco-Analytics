@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100%;
+    background: #fff;
+    color: #000;
+}
+
+
+body {
+    text-rendering: optimizeLegibility;
+}
+
+
+body, ul, ol, dl {
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    position: fixed;
+    width: 100%;
+    background: #FFF;
+    top: 0;
+}
+
+.navbar {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+header {
+    margin-top: 86px;
+}
