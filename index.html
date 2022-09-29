@@ -19,27 +19,35 @@
     <meta name="twitter:title" content="">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
 <nav>
-    <img src="images/hecologo.png" alt="">
-    <ul class="navbar">
-        <li><a href="#need">Need</a></li>
-        <li><a href="#platform">Platform</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#started">Getting Started</a></li>
-        <li><input type="text" placeholder="Search.."></li>
-        <li>
-            <button>Join</button>
-        </li>
-    </ul>
-
+    <div class="navbar">
+        <a href="#" id="logo"><img src="images/hecologo.png" alt=""></a>
+        <ul class="primary-nav">
+            <li><a href="#need">Need</a></li>
+            <li><a href="#platform">Platform</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#started">Getting Started</a></li>
+            <li><input id="search" type="text" placeholder="Search.."></li>
+            <li>
+                <button id="join">Join</button>
+            </li>
+        </ul>
+    </div>
 </nav>
 <header>
-    <h1>Analytics Software for Evidence based Healthcare</h1>
+    <div class="header">
+        <h1>Analytics Software for Evidence based Healthcare</h1>
+        <img src="images/learning.svg" alt=""/>
+    </div>
 </header>
 <section id="need">
-    <h3>The Need - Health Economics</h3>
+    <h2>The Need - Health Economics</h2>
     <p>HecoAnalytics provides health economic tools and solutions, within a business context, to enable companies to
         engage early and affordably with health economics enabling them to develop better, more effective products
         designed to meet commissioners’ and healthcare systems’ needs. The output of HecoAnalytics tools are aligned
@@ -57,38 +65,45 @@
                 href="Whitepaper.pdf" target="_blank" download>here</a>.</p>
 
     <div class="timeline">
-        <div>
-            <div>
+        <div class="row">
+            <div class="card">
                 <h3>What is HecoAnalytics?</h3>
                 <p>Cloud based health economic decision-making tools, supported by our team of health economists, able
                     to
                     identify innovations that have the potential to be a good investment for you as medical device
                     manufacturers.</p>
             </div>
-            <img src="images/hecowebillmix-06.png" alt=""/>
+            <div class="icon">
+                <img src="images/hecowebillmix-06.png" alt=""/>
+            </div>
         </div>
-        <div>
-            <div>
+        <div class="row">
+            <div class="card">
                 <h3>When should HecoAnalytics be used?</h3>
                 <p>From 'the concept stage' to the design of new devices, supporting development decisions,
                     justification of
                     investment and ultimately supporting market acceptance.</p>
             </div>
-            <img src="images/hecowebillmix-02.png" alt=""/>
+            <div class="icon">
+                <img src="images/hecowebillmix-02.png" alt=""/>
+            </div>
         </div>
-        <div>
-            <div>
+        <div class="row">
+            <div class="card">
                 <h3>Why is HecoAnalytics valuable?</h3>
                 <p>Helping you to develop the right product, for the right market, for the right price and focus limited
                     resources to devices that will be cost effective and adopted in the market.</p>
             </div>
-            <img src="images/hecowebillmix-03.png" alt=""/>
+            <div class="icon">
+                <img src="images/hecowebillmix-03.png" alt=""/>
+            </div>
         </div>
+        <div class="line"></div>
     </div>
 </section>
 
 <section id="platform">
-    <h3>The Platform</h3>
+    <h2>The Platform</h2>
     <p>We provide developers and manufacturers of near-patient products and services with a simple to use economic
         pricing and scenario analysis tool that utilises state-of-the-art cloud, big data and semantic technologies.
         HecoAnalytics builds on over a decade of academic research in Health Economics and Computer Science.
@@ -105,7 +120,7 @@
 </section>
 
 <section id="services">
-    <h3>Services</h3>
+    <h2>Services</h2>
     <p>HecoAnalytics is able to provide all services associated with health economic evidence generation and support of
         market access and HTA activities. The typical process of projects that HecoAnalytics undertakes for companies
         includes:</p>
@@ -152,8 +167,8 @@
         <img src="images/hecowebillmix-09.png" alt=""/>
     </div>
     <div class="timeline">
-        <div>
-            <div>
+        <div class="row">
+            <div class="card">
                 <h3>Building Generic HE Models</h3>
                 <p>HecoAnalytics offers access to its proprietary generic health economic models in areas such as
                     sepsis, cancer diagnostics and cardiology, facilitating:</p>
@@ -167,8 +182,8 @@
 
             </div>
         </div>
-        <div>
-            <div>
+        <div class="row">
+            <div class="card">
                 <h3>Constructing Evidence Maps</h3>
                 <p>Evidence Maps are central to the HecoAnalytics platform, underpinning:</p>
                 <ul>
@@ -179,8 +194,8 @@
                 </ul>
             </div>
         </div>
-        <div>
-            <div>
+        <div class="row">
+            <div class="card">
                 <h3>Data-Driven Clinical Trial Design</h3>
                 <p>HecoAnalytics platform and Evidence Maps can facilitate a more effective clinical trial process
                     by:</p>
@@ -191,8 +206,8 @@
                 </ul>
             </div>
         </div>
-        <div>
-            <div>
+        <div class="row">
+            <div class="card">
                 <h3>Modelling and Analysis</h3>
                 <p>Extracting the data form the PicTags and the Evidence Map enable numerous generic, bespoke or
                     proprietary HE models to be run - Cost utility, Budget impact, Markov – supporting a range of
@@ -201,11 +216,12 @@
                     providing payer analysis, clinical trends in markets of interest and competitive intelligence.</p>
             </div>
         </div>
+        <div class="line"></div>
     </div>
 </section>
 
 <section id="started">
-    <h3>Getting started</h3>
+    <h2>Getting started</h2>
     <p>Companies access all or some of these services but there is no requirement to have undertaken previous work with
         HecoAnalytics. Typical projects are performed in a phased manner to allow the learnings from each phase to
         inform the next, and for the course of the project to be adjusted to the company’s needs as necessary and
@@ -213,22 +229,22 @@
 </section>
 
 <footer>
-    <ul class="contact">
-        <li><a href="mailto:info@hecoanalytics.com">info@hecoanalytics.com</a></li>
-        <li><a href="https://www.linkedin.com/company/hecoanalytics-limited/" target="_blank">LinkedIn</a></li>
-        <li><a href="https://goo.gl/maps/xC2cRxm9CPy8yBhS9" target="_blank">
-            <p>Brunel University London - Kingston Lane, Uxbridge, Middlesex UB8 3PH, UK</p>
-        </a></li>
-    </ul>
-    <ul class="copyright">
-        <li>&copy; HecoAnalytics
-            <script>document.write(new Date().getFullYear())</script>
-        </li>
-    </ul>
-    <ul class="terms">
-        <li><a href="#">Terms</a></li>
-        <li><a href="#">Policy</a></li>
-    </ul>
+    <div class="footer">
+        <ul class="contact">
+            <li><a href="mailto:info@hecoanalytics.com">info@hecoanalytics.com</a></li>
+            <li><a href="https://www.linkedin.com/company/hecoanalytics-limited/" target="_blank">LinkedIn</a></li>
+            <li><a href="https://goo.gl/maps/xC2cRxm9CPy8yBhS9" target="_blank">Brunel University London</a></li>
+        </ul>
+        <ul class="copyright">
+            <li>&copy; HecoAnalytics
+                <script>document.write(new Date().getFullYear())</script>
+            </li>
+        </ul>
+        <ul class="terms">
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Policy</a></li>
+        </ul>
+    </div>
 </footer>
 
 <script src="scripts/script.js"></script>
