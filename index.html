@@ -27,23 +27,37 @@
 <body>
 <nav>
     <div class="navbar">
-        <a href="#" id="logo"><img src="images/hecologo.png" alt=""></a>
-        <ul class="primary-nav">
-            <li><a href="#need">Need</a></li>
-            <li><a href="#platform">Platform</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#started">Getting Started</a></li>
-            <li><input id="search" type="text" placeholder="Search.."></li>
+        <a href="#" class="logo"><img src="images/hecologo.png" alt=""></a>
+
+        <div id="hamburger" onclick="hamburger(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+
+        <ul id="primary-nav">
+            <li><a class="navBtn" href="#need">Need</a></li>
+            <li><a class="navBtn" href="#platform">Platform</a></li>
+            <li><a class="navBtn" href="#services">Services</a></li>
+            <li><a class="navBtn" href="#started">Getting Started</a></li>
             <li>
-                <button id="join">Join</button>
+                <input id="search" autocomplete="off" type="text" onkeyup="searchText()" onclick="searchText()" onblur="hideResults()"
+                       placeholder="Search..">
+                <ul id="searchResults"></ul>
+            </li>
+            <li>
+                <button class="btn-primary">Join</button>
             </li>
         </ul>
     </div>
 </nav>
 <header>
     <div class="header">
-        <h1>Analytics Software for Evidence based Healthcare</h1>
-        <img src="images/learning.svg" alt=""/>
+        <div class="header-text">
+            <h1>Analytics Software for Evidence based Healthcare</h1>
+            <button class="btn-primary">Join</button>
+        </div>
+        <img src="images/predictiveAnalytics.svg" alt=""/>
     </div>
 </header>
 <section id="need">
@@ -92,7 +106,7 @@
             <div class="card">
                 <h3>Why is HecoAnalytics valuable?</h3>
                 <p>Helping you to develop the right product, for the right market, for the right price and focus limited
-                    resources to devices that will be cost effective and adopted in the market.</p>
+                    resources to devices that will be cost-effective and adopted in the market.</p>
             </div>
             <div class="icon">
                 <img src="images/hecowebillmix-03.png" alt=""/>
@@ -235,14 +249,13 @@
             <li><a href="https://www.linkedin.com/company/hecoanalytics-limited/" target="_blank">LinkedIn</a></li>
             <li><a href="https://goo.gl/maps/xC2cRxm9CPy8yBhS9" target="_blank">Brunel University London</a></li>
         </ul>
-        <ul class="copyright">
-            <li>&copy; HecoAnalytics
-                <script>document.write(new Date().getFullYear())</script>
-            </li>
-        </ul>
+
         <ul class="terms">
             <li><a href="#">Terms</a></li>
             <li><a href="#">Policy</a></li>
+            <li>&copy; HecoAnalytics
+                <script>document.write(String(new Date().getFullYear()))</script>
+            </li>
         </ul>
     </div>
 </footer>

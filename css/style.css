@@ -32,7 +32,7 @@ body {
     font-family: 'Ubuntu', sans-serif;
     font-size: 1.2em;
     line-height: 1.7;
-    background: #eaeaea;
+    background: #eeeeee;
 }
 
 
@@ -58,6 +58,10 @@ p a:hover {
     background: var(--primary-bg);
 }
 
+ol, ul {
+    padding-left: 1em;
+}
+
 nav {
     position: fixed;
     width: 100%;
@@ -72,7 +76,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 16px;
+    padding: 8px var(--primary-padding);
     margin: auto;
 }
 
@@ -80,19 +84,42 @@ nav {
     height: 40px;
 }
 
-.primary-nav {
+#hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: var(--secondary);
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+}
+
+#primary-nav {
     list-style: none;
     padding: 0;
     display: flex;
 }
 
-.primary-nav li, #logo {
+#primary-nav li, .logo {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.primary-nav li a {
+#primary-nav li a {
     padding: 8px 16px;
     color: var(--secondary);
     text-decoration: none;
@@ -100,7 +127,7 @@ nav {
     font-size: 16px;
 }
 
-.primary-nav li a:hover {
+#primary-nav li a:hover {
     color: var(--primary);
     background: var(--primary-bg);
 }
@@ -114,6 +141,7 @@ nav {
     font-size: 16px;
     font-weight: 400;
     color: var(--secondary);
+    margin: 0 var(--primary-padding);
 }
 
 #search:focus, #search:active {
@@ -121,7 +149,30 @@ nav {
     outline: none;
 }
 
-#join {
+.search-active {
+    position: absolute;
+    width: 100%;
+    background: black;
+    margin: 0;
+    height: 100vh;
+    align-items: baseline;
+    padding-top: 16px;
+}
+
+#searchResults {
+    display: none;
+    position: absolute;
+    background: #FFFFFF;
+    padding: 8px var(--primary-padding);
+    border: 1px solid var(--secondary);
+    border-radius: 4px;
+    top: 44px;
+    box-shadow: var(--shadow);
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.btn-primary {
     background-color: var(--primary);
     border: none;
     color: white;
@@ -131,27 +182,39 @@ nav {
     display: inline-block;
     font-size: 16px;
     border-radius: 4px;
-    margin: 0 16px;
 }
 
-#join:hover {
+.btn-primary:hover {
     background: var(--primary-bg);
     color: var(--primary);
 }
 
 header {
     margin-top: 56px;
+    background-color: darkblue;
+    box-shadow: var(--shadow);
 }
 
 .header {
     max-width: 1200px;
     margin: auto;
-    padding: var(--primary-padding);
+    padding: 0 var(--primary-padding);
     display: flex;
+    align-items: center;
 }
 
-.header h1 {
+.header-text, .header img {
     width: 50%;
+}
+
+.header-text {
+    margin: 0;
+}
+
+.header img {
+    margin-top: 32px;
+    max-height: 500px;
+    height: fit-content;
 }
 
 section {
@@ -212,7 +275,7 @@ section {
     position: relative;
 }
 
-.row:nth-child(odd) .card::before {
+.card::before {
     content: "";
     position: absolute;
     width: 32px;
@@ -221,20 +284,14 @@ section {
     outline: 2px solid var(--primary);
     box-shadow: var(--shadow);
     border-radius: 100%;
-    top: 50%;
+    top: calc(50% - 16px);
+}
+
+.row:nth-child(odd) .card::before {
     right: -48px;
 }
 
-.row:nth-child(even) .card::after {
-    content: "";
-    position: absolute;
-    width: 32px;
-    height: 32px;
-    background: #FFFFFF;
-    outline: 2px solid var(--primary);
-    box-shadow: var(--shadow);
-    border-radius: 100%;
-    top: 50%;
+.row:nth-child(even) .card::before {
     left: -48px;
 }
 
@@ -268,11 +325,12 @@ footer {
     margin: auto;
     display: flex;
     padding: var(--primary-padding);
+    justify-content: space-between;
 }
 
 .footer ul {
     list-style: none;
-    width: 33%;
+    width: 50%;
     padding: 0;
     text-align: center;
     color: var(--secondary);
@@ -285,4 +343,67 @@ footer {
 }
 .footer ul li a:hover {
     color: var(--primary);
+}
+
+@media screen and (max-width: 900px) {
+    body {
+        font-size: 1em;
+        line-height: 1.2;
+    }
+    #hamburger {
+        display: inline;
+    }
+    #primary-nav {
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        top: 56px;
+        left: 0;
+        background: #FFFFFF;
+    }
+    #primary-nav li {
+        margin: 8px;
+    }
+    #primary-nav li a {
+        font-size: 1.2em;
+        width: 100%;
+        text-align: center;
+        padding: 16px;
+    }
+    .header {
+        flex-direction: column;
+    }
+    .header-text, .header img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .row {
+        justify-content: end;
+    }
+    .icon {
+        display: none;
+    }
+    .card {
+        width: calc(100% - 32px);
+        margin: 8px 0;
+    }
+    .card::before {
+        left: -32px !important;
+        width: 24px;
+        height: 24px;
+        top: calc(50% - 12px);
+    }
+    .line {
+        left: 11px;
+    }
+    .footer {
+        flex-direction: column;
+    }
+    .footer ul {
+        width: 100%;
+    }
 }
