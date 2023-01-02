@@ -10,10 +10,10 @@ function hamburger(x) {
     }
 }
 
-const buttons = document.getElementsByClassName('navBtn');
-for (let button of buttons) {
+const navButtons = document.getElementsByClassName('navBtn');
+for (let button of navButtons) {
     button.addEventListener('click', () => {
-        if (window.innerWidth <= 900) {
+        if (window.innerWidth <= 1000) {
             document.getElementById('hamburger').classList.toggle("change");
             document.getElementById('primary-nav').style.display = 'none';
         }
@@ -68,7 +68,7 @@ function hideResults() {
 }
 
 window.addEventListener('resize', () => {
-    if (window.innerWidth > 900) {
+    if (window.innerWidth > 1000) {
         document.getElementById('primary-nav').style.display = 'flex';
     } else {
         document.getElementById('primary-nav').style.display = 'none';
@@ -156,3 +156,63 @@ window.addEventListener('resize', () => {
         'DOMContentLoaded', anchorScrolls.init.bind(anchorScrolls)
     );
 })(window.document, window.history, window.location);
+
+const loginBtn = document.getElementById('login-btn');
+const loginDialog = document.getElementById('login-dialog');
+const loginForm = document.getElementById('login-form');
+const email = loginDialog.querySelector('#email');
+const password = loginDialog.querySelector('#password');
+const confirmBtn = loginDialog.querySelector('#confirmBtn');
+const cancelBtn = loginDialog.querySelector('#cancelBtn');
+const errorMessages = loginDialog.querySelectorAll('.form-error');
+
+function closeDialog() {
+    loginDialog.style.display = 'none';
+    clearErrors();
+}
+
+function clearErrors() {
+    errorMessages.forEach(elem => {
+        elem.innerHTML = "";
+    });
+}
+
+loginBtn.addEventListener('click', () => {
+    loginDialog.style.display = 'flex';
+    loginForm.reset();
+});
+
+cancelBtn.addEventListener('click', closeDialog);
+
+confirmBtn.addEventListener('click', () => {
+    clearErrors();
+    if (!loginForm.checkValidity()) {
+        if (!email.checkValidity()) {
+            if (email.value.length === 0) {
+                document.getElementById('email-error').innerHTML = "Enter your email address";
+            } else {
+                document.getElementById('email-error').innerHTML = "Enter a valid email address";
+            }
+        }
+        if (password.value.length === 0) {
+            document.getElementById('password-error').innerHTML = "Enter your password";
+        }
+    } else {
+        alert(`Hello ${email.value}, nice to see you!`);
+        closeDialog();
+    }
+
+})
+
+function formStyling(x) {
+    x.addEventListener('change', () => {
+        if (x.value.length > 0) {
+            x.parentElement.className = 'filled';
+        } else {
+            x.parentElement.className = ''
+        }
+    });
+}
+
+formStyling(email);
+formStyling(password);
