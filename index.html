@@ -23,10 +23,11 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
 
 </head>
 <body>
@@ -55,7 +56,7 @@
 
 <nav>
     <div class="navbar">
-        <a href="index.html" class="logo" title="heco analytics"><img src="images/hecologo.png" alt=""></a>
+        <a href="index.html" class="logo" title="Heco Analytics"><img src="images/HecoLogo.svg" alt="logo"></a>
 
         <div id="hamburger" onclick="hamburger(this)">
             <div class="bar1"></div>
@@ -64,34 +65,104 @@
         </div>
 
         <ul id="primary-nav">
+            <li><a class="navBtn" href="#tools">Our tools</a></li>
+            <li><a class="navBtn" href="#about">About</a></li>
             <li><a class="navBtn" href="#need">Need</a></li>
-            <li><a class="navBtn" href="#platform">Platform</a></li>
             <li><a class="navBtn" href="#services">Services</a></li>
-            <li><a class="navBtn" href="#started">Getting Started</a></li>
             <li>
-                <label class="search-label" for="search">Search</label>
-                <input id="search" autocomplete="off" type="text" onkeyup="searchText()" onclick="searchText()"
-                       onblur="hideResults()"
-                       placeholder="Search..">
-                <ul id="searchResults"></ul>
+                <button type="button" id="login-btn">Sign in</button>
             </li>
             <li>
-                <button type="button" class="btn-secondary" id="login-btn">Log in</button>
+                <button type="button">Join</button>
             </li>
             <li>
-                <button type="button" class="btn-primary">Join</button>
+                <button type="button" class="btn-icon"><i class="zmdi zmdi-search"></i></button>
             </li>
         </ul>
     </div>
 </nav>
+<!--<div class="search">-->
+<!--    <label class="search-label" for="search">Search</label>-->
+<!--    <input id="search" autocomplete="off" type="text" onkeyup="searchText()" onclick="searchText()"-->
+<!--           onblur="hideResults()"-->
+<!--           placeholder="Search..">-->
+<!--    <ul id="searchResults"></ul>-->
+<!--</div>-->
 <header>
     <div class="header-text">
         <h1>Analytics Software for<br>Evidence based Healthcare</h1>
-        <a title="Read more!" href="#need"><i class="zmdi zmdi-long-arrow-down"></i></a>
+        <a title="Read more!" href="#tools"><i class="zmdi zmdi-long-arrow-down"></i></a>
     </div>
 </header>
+
+<section id="tools">
+    <p class="tag-line">App Library</p>
+    <h2>Try our tools</h2>
+    <p>We provide developers and manufacturers of near-patient products and services with a simple to use economic
+        pricing and scenario analysis tool that utilises state-of-the-art cloud, big data and semantic technologies.</p>
+    <div class="tool-blocks">
+        <div class="tool-block">
+            <h3>HeConnect</h3>
+            <p>A Web interface for collecting real-time evidence.</p>
+            <a class="btn-secondary">Coming Soon!</a>
+        </div>
+        <div class="tool-block">
+            <h3>HecoCalc</h3>
+            <p>An early stage health economics calculator.</p>
+            <a class="btn-secondary">Coming Soon!</a>
+        </div>
+        <div class="tool-block">
+            <h3>HecoSAILR</h3>
+            <p>A systematic AI based literature and cost review.</p>
+            <a class="btn-secondary">Coming Soon!</a>
+        </div>
+        <div class="tool-block">
+            <h3>HecoCloud</h3>
+            <p>A high performance machine learning environment</p>
+            <a class="btn-secondary">Coming Soon!</a>
+        </div>
+        <div class="tool-block">
+            <h3>HecoPath</h3>
+            <p>An AI based path analysis tool</p>
+            <a class="btn-secondary">Coming Soon!</a>
+        </div>
+    </div>
+</section>
+<section id="about">
+    <p class="tag-line">About</p>
+    <h2>What is HecoAnalytics?</h2>
+    <p>Cloud based health economic decision-making tools, supported by our team of health economists, able to identify
+        innovations that have the potential to be a good investment for you as medical device manufacturers.</p>
+</section>
+<section>
+    <p class="tag-line">Usage</p>
+    <h2>When should HecoAnalytics be used?</h2>
+    <p>From 'the concept stage' to the design of new devices, supporting development decisions, justification of
+        investment and ultimately supporting market acceptance.</p>
+</section>
+<section>
+    <p class="tag-line">Value</p>
+    <h2>Why is HecoAnalytics valuable?</h2>
+    <p>Helping you to develop the right product, for the right market, for the right price and focus limited resources
+        to devices that will be cost-effective and adopted in the market.</p>
+</section>
+<section>
+    <div class="testimonial-block" id="testimonial-block">
+        <div class="testimonial-arrows">
+            <button type="button" id="previous-testimonial" title="Previous"><i class="zmdi zmdi-caret-left"></i>
+            </button>
+            <button type="button" id="next-testimonial" title="Next"><i class="zmdi zmdi-caret-right"></i></button>
+        </div>
+        <div class="tag-line">from HecoAnalytics users</div>
+        <i class="zmdi zmdi-quote"></i>
+        <div id="testimonial-text"></div>
+        <div id="testimonial-name"></div>
+        <div id="testimonial-indicators"></div>
+    </div>
+</section>
 <section id="need">
-    <h2>The Need - Health Economics</h2>
+    <p class="tag-line">Need</p>
+    <h2>Why is HecoAnalytics needed?</h2>
     <p>HecoAnalytics provides health economic tools and solutions, within a business context, to enable companies to
         engage early and affordably with health economics enabling them to develop better, more effective products
         designed to meet commissioners’ and healthcare systems’ needs. The output of HecoAnalytics tools are aligned
@@ -103,76 +174,37 @@
         interaction with experienced staff to ensure that clients gain maximum value from the process, delivering
         actionable, user-friendly output rather than simply providing academic reports. Furthermore, the integrated
         nature of HecoAnalytics deliverables means that previous work can informed future work and models and ideas can
-        be easily and efficiently updated as new information is generated.</p>
+        be easily and efficiently updated as new information is generated.
+    </p>
     <p>HecoAnalytics uses the accepted practice of evaluating the cost-effectiveness of a new technology in comparison
-        to an existing gold standard technology, similar to that used by NICE. Read our White paper <a
-                href="Whitepaper.pdf" target="_blank" download>here</a>.</p>
-
-    <div class="timeline">
-        <div class="row">
-            <div class="card">
-                <h3>What is HecoAnalytics?</h3>
-                <p>Cloud based health economic decision-making tools, supported by our team of health economists, able
-                    to
-                    identify innovations that have the potential to be a good investment for you as medical device
-                    manufacturers.</p>
-            </div>
-            <div class="icon">
-                <img src="images/hecowebillmix-06.png" alt=""/>
-            </div>
-        </div>
-        <div class="row">
-            <div class="card">
-                <h3>When should HecoAnalytics be used?</h3>
-                <p>From 'the concept stage' to the design of new devices, supporting development decisions,
-                    justification of
-                    investment and ultimately supporting market acceptance.</p>
-            </div>
-            <div class="icon">
-                <img src="images/hecowebillmix-02.png" alt=""/>
-            </div>
-        </div>
-        <div class="row">
-            <div class="card">
-                <h3>Why is HecoAnalytics valuable?</h3>
-                <p>Helping you to develop the right product, for the right market, for the right price and focus limited
-                    resources to devices that will be cost-effective and adopted in the market.</p>
-            </div>
-            <div class="icon">
-                <img src="images/hecowebillmix-03.png" alt=""/>
-            </div>
-        </div>
-        <div class="line"></div>
+        to an existing gold standard technology, similar to that used by NICE.
+    </p>
+    <div class="actions">
+        <a href="Whitepaper.pdf" download="Whitepaper.pdf" class="btn-primary">Read our White paper</a>
     </div>
 </section>
-
-<section id="platform"  class="small">
-    <h2>The Platform</h2>
-    <p>We provide developers and manufacturers of near-patient products and services with a simple to use economic
-        pricing and scenario analysis tool that utilises state-of-the-art cloud, big data and semantic technologies.
-        HecoAnalytics builds on over a decade of academic research in Health Economics and Computer Science.
+<section id="platform">
+    <p class="tag-line">Platform</p>
+    <h2>How the HecoAnalytics platform works</h2>
+    <p>HecoAnalytics builds on over a decade of academic research in Health Economics and Computer Science.
         HecoAnalytics uses the latest computing technology such as machine learning (ML), artificial Intelligence (AI)
-        and other data science techniques to streamline health economic processes and models. In addition to owr own
+        and other data science techniques to streamline health economic processes and models. In addition to our own
         staff, the company leverages a network of world-leading academic health economists so that appropriate domain
-        expertise can be brought to bear on clients’ projects in a cost-effective manner. In addition, HecoAnalytics is
-        a licensed facilitator for the NICE META Tool, an online evidence gap analysis tool.</p>
-    <div class="icons">
-        <img src="images/hecowebillmix-01.png" alt=""/>
-        <img src="images/hecowebillmix-04.png" alt=""/>
-        <img src="images/hecowebillmix-07.png" alt=""/>
-    </div>
+        expertise can be brought to bear on clients’ projects in a cost-effective manner. HecoAnalytics is also a
+        licensed facilitator for the NICE META Tool, an online evidence gap analysis tool.
+    </p>
 </section>
-
 <section id="services">
-    <h2>Services</h2>
+    <p class="tag-line">Services</p>
+    <h2>What you can do with HecoAnalytics</h2>
     <p>HecoAnalytics is able to provide all services associated with health economic evidence generation and support of
         market access and HTA activities. The typical process of projects that HecoAnalytics undertakes for companies
         includes:</p>
     <ol>
         <li>NICE Medtech Early Technical Assessment (META) Tool - an affordable, online, platform developed by NICE to
             help product developers understand what evidence is needed to make a convincing case to payers and
-            commissioners
-            for their technology. It is delivered by HecoAnalytics under licence to NICE as a Facilitating Organisation.
+            commissioners for their technology. It is delivered by HecoAnalytics under licence to NICE as a
+            Facilitating Organisation.
         </li>
         <li>Value Proposition (VP) Development – a clear argument to support commissioning of the product backed by
             measurable data and a robust evidence base. A principal objective to understand where the product will fall
@@ -182,8 +214,7 @@
             cost-effectiveness of proposed interventions. EEM is employed to evaluate the potential cost-effectiveness
             related to different product performance characteristics, potential pricing of the product or results of
             clinical trials. Often this can be the first supporting evidence that a product, or intervention, has
-            clinical
-            and commercial potential.
+            clinical and commercial potential.
         </li>
         <li>Budget Impact (BI) Model development - A budget impact analysis is an economic assessment that estimates the
             financial consequences of adopting a new intervention for a specific budget holder resulting from a decision
@@ -195,101 +226,67 @@
             defined as cost relative to specified health outcomes. A cost-effectiveness analysis evaluates whether an
             intervention represents value for money compared to comparable interventions.
         </li>
-        <li>Development of real time data collection and economic analysis – HecoNect. HecoAnalytics can assist in data
+        <li>Development of real time data collection and economic analysis – HeConnect. HecoAnalytics can assist in data
             integration from a Digital Health Technology (DHT) or app into health economic models (including real time).
             Consequently, facilitating significant improvements in the quality and quantity of data that are collected
             and the speed at which economic models can be produced that can be updated with new data as they become
             available.
         </li>
         <li>Development of AI and machine learning for analysing trial, public and private health data. Findings are
-            able to target products or services to specific patient groups in order to improve health economic models.
+            able to target products or patient groups in order to improve health economic models.
         </li>
     </ol>
-    <div class="icons">
-        <img src="images/hecowebillmix-05.png" alt=""/>
-        <img src="images/hecowebillmix-08.png" alt=""/>
-        <img src="images/hecowebillmix-09.png" alt=""/>
-    </div>
-    <div class="timeline">
-        <div class="row">
-            <div class="card">
-                <h3>Building Generic HE Models</h3>
-                <p>HecoAnalytics offers access to its proprietary generic health economic models in areas such as
-                    sepsis, cancer diagnostics and cardiology, facilitating:</p>
-                <ul>
-                    <li>Fast cost-effective quick view of the HE proposition for a product</li>
-                    <li>Collaborative internal investment decision</li>
-                    <li>Justification of external investment decision</li>
-                    <li>Shaping of early product specification</li>
-                    <li>Presentation of analysis on a laptop, tablet and mobile.</li>
-                </ul>
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="card">
-                <h3>Constructing Evidence Maps</h3>
-                <p>Evidence Maps are central to the HecoAnalytics platform, underpinning:</p>
-                <ul>
-                    <li>Fully searchable literature surveys around treatment pathways of interest</li>
-                    <li>On-going evolution staying current throughout product lifetime</li>
-                    <li>Capture of literature sources - public domain, proprietary, imagery</li>
-                    <li>Shaping early product specification</li>
-                </ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="card">
-                <h3>Data-Driven Clinical Trial Design</h3>
-                <p>HecoAnalytics platform and Evidence Maps can facilitate a more effective clinical trial process
-                    by:</p>
-                <ul>
-                    <li>Informing clinical trial design ensuring trials demonstrate appropriate HE objectives</li>
-                    <li>Support scenario analysis</li>
-                    <li>Provide simple and fast referencing for applications</li>
-                </ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="card">
-                <h3>Modelling and Analysis</h3>
-                <p>Extracting the data form the PicTags and the Evidence Map enable numerous generic, bespoke or
-                    proprietary HE models to be run - Cost utility, Budget impact, Markov – supporting a range of
-                    scenario analysis.</p>
-                <p>Market entry and payer analysis reporting is able to extract data form our Cloud data server
-                    providing payer analysis, clinical trends in markets of interest and competitive intelligence.</p>
-            </div>
-        </div>
-        <div class="line"></div>
-    </div>
 </section>
 
-<section id="started" class="small">
-    <h2>Getting started</h2>
-    <p>Companies access all or some of these services but there is no requirement to have undertaken previous work with
-        HecoAnalytics. Typical projects are performed in a phased manner to allow the learnings from each phase to
-        inform the next, and for the course of the project to be adjusted to the company’s needs as necessary and
-        leverage our platform.</p>
+<section>
+    <p class="tag-line">Services</p>
+    <h2>Building Generic HE Models</h2>
+    <p>HecoAnalytics offers access to its proprietary generic health economic models in areas such as sepsis, cancer
+        diagnostics and cardiology, facilitating:</p>
+    <h2>Constructing Evidence Maps</h2>
+    <p>Evidence Maps are central to the HecoAnalytics platform, underpinning:</p>
+    <h2>Data-Driven Clinical Trial Design</h2>
+    <p>HecoAnalytics platform and Evidence Maps can facilitate a more effective clinical trial process by:</p>
+    <h2>Modelling and Analysis</h2>
+    <p>Extracting the data form the PicTags and the Evidence Map enable numerous generic, bespoke or proprietary HE
+        models to be run - Cost utility, Budget impact, Markov – supporting a range of scenario analysis.</p>
+    <p>Market entry and payer analysis reporting is able to extract data form our Cloud data server providing payer
+        analysis, clinical trends in markets of interest and competitive intelligence.</p>
+</section>
+
+<section>
+    <div class="more-info">
+        <p class="tag-line">Interested in HecoAnalytics</p>
+        <p class="explore-tools">Explore our tools</p>
+        <div class="actions">
+            <a href="#tools" class="btn-primary">Get Started</a>
+        </div>
+    </div>
 </section>
 
 <footer>
     <div class="footer">
-        <ul class="contact">
+        <ul class="terms">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
             <li><a href="mailto:info@hecoanalytics.com"><i class="zmdi zmdi-email"></i> info@hecoanalytics.com</a></li>
-            <li><a href="https://www.linkedin.com/company/hecoanalytics-limited/" target="_blank"><i class="zmdi zmdi-linkedin-box"></i> LinkedIn</a></li>
-            <li><a href="https://goo.gl/maps/xC2cRxm9CPy8yBhS9" target="_blank"><i class="zmdi zmdi-google-maps"></i> Brunel University London</a></li>
         </ul>
 
-        <ul class="terms">
-            <li><a href="#">Terms</a></li>
-            <li><a href="#">Policy</a></li>
-            <li>&copy; HecoAnalytics
+        <div class="copyright">
+            <p>&copy; HecoAnalytics
                 <script>document.write(String(new Date().getFullYear()))</script>
-            </li>
-        </ul>
+            </p>
+        </div>
+        <div class="social-media">
+            <p>Follow:</p>
+            <a href="https://www.linkedin.com/company/hecoanalytics-limited/" target="_blank"
+               title="Follow us on LinkedIn"><i class="zmdi zmdi-linkedin-box"></i></a>
+
+        </div>
+
+
     </div>
 </footer>
-
 <script src="scripts/script.js?2022-11-06T16-14"></script>
 </body>
 </html>

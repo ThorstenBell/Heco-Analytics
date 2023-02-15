@@ -1,4 +1,18 @@
 'use strict';
+const testimonials = [
+    {
+        name: "Marcus Aurelius",
+        testimonial: "You have power over your mind – not outside events. Realize this, and you will find strength."
+    },
+    {
+        name: "Epictetus",
+        testimonial: "Caretake this moment. Immerse yourself in its particulars. Respond to this person, this challenge, this deed. Quit evasions. Stop giving yourself needless trouble. It is time to really live; to fully inhabit the situation you happen to be in now."
+    },
+    {
+        name: "Seneca",
+        testimonial: "The whole future lies in uncertainty: live immediately."
+    },
+]
 
 function hamburger(x) {
     x.classList.toggle("change");
@@ -216,3 +230,55 @@ function formStyling(x) {
 
 formStyling(email);
 formStyling(password);
+
+const testimonialName = document.getElementById('testimonial-name');
+const testimonialText = document.getElementById('testimonial-text');
+const previousTestimonial = document.getElementById('previous-testimonial');
+const nextTestimonial = document.getElementById('next-testimonial');
+const testimonialIndicators = document.getElementById('testimonial-indicators');
+let testimonialIndex = 0;
+
+testimonialName.innerText = testimonials[0].name;
+testimonialText.innerText = testimonials[0].testimonial;
+setTestimonialIndicators();
+
+function setTestimonialIndicators() {
+    testimonialIndicators.innerHTML = "";
+    testimonials.forEach((testimonial, index) => {
+        let buttonId = "indicator-" + index;
+        if (index === testimonialIndex) {
+            testimonialIndicators.insertAdjacentHTML('beforeend', `<button type='button' id='${buttonId}'><i class='zmdi zmdi-circle'></i>\n</button>`);
+        } else {
+            testimonialIndicators.insertAdjacentHTML('beforeend', `<button type='button' id='${buttonId}'><i class='zmdi zmdi-circle-o'></i>\n</button>`);
+        }
+        document.getElementById(buttonId).addEventListener('click', () => {
+            testimonialIndex = index;
+            testimonialName.innerText = testimonials[testimonialIndex].name;
+            testimonialText.innerText = testimonials[testimonialIndex].testimonial;
+            setTestimonialIndicators();
+        })
+    });
+}
+
+nextTestimonial.addEventListener('click', () => {
+    if (testimonialIndex < (testimonials.length - 1)) {
+        testimonialIndex++;
+    } else {
+        testimonialIndex = 0;
+    }
+    testimonialName.innerText = testimonials[testimonialIndex].name;
+    testimonialText.innerText = testimonials[testimonialIndex].testimonial;
+    setTestimonialIndicators();
+});
+
+previousTestimonial.addEventListener('click', () => {
+    if (testimonialIndex > 0) {
+        testimonialIndex--;
+    } else {
+        testimonialIndex = testimonials.length - 1;
+    }
+    testimonialName.innerText = testimonials[testimonialIndex].name;
+    testimonialText.innerText = testimonials[testimonialIndex].testimonial;
+    setTestimonialIndicators();
+});
+
