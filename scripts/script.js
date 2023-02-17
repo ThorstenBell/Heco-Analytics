@@ -1,16 +1,24 @@
 'use strict';
 const testimonials = [
     {
-        name: "Marcus Aurelius",
-        testimonial: "You have power over your mind – not outside events. Realize this, and you will find strength."
+        name: "CEO – company developing novel point of care technology",
+        testimonial: "We worked with HecoAnalytics to develop budget impact and cost-effectiveness models using their proprietary web-based tool.  This allowed considerable flexibility in terms of inputs and scenarios and allowed us to better understand the consequences of the performance of our product and the data we needed to justify its adoption.\n"
     },
     {
-        name: "Epictetus",
-        testimonial: "Caretake this moment. Immerse yourself in its particulars. Respond to this person, this challenge, this deed. Quit evasions. Stop giving yourself needless trouble. It is time to really live; to fully inhabit the situation you happen to be in now."
+        name: "CEO – Medical AI digital company working in early cancer diagnosis",
+        testimonial: "As a start-up with a computing background we were new to the concept of Health Economics and its relationship to our value proposition.  HecoAnalytics supported us on this journey and help to understand contextualise the requirements and provide an evidence generation plan, which was subsequently grant funded."
     },
     {
-        name: "Seneca",
-        testimonial: "The whole future lies in uncertainty: live immediately."
+        name: "Project Manager – new digital pathway for neurodegenerative diseases",
+        testimonial: "We worked with HecoAnalytics to develop an early economic model and subsequently a real time data collection from our app using HecoNect.  We hope to use the HecoNect functionality as a sales tool beyond our current use in clinical evaluation.  The company was responsive and understanding of our needs as well as flexible understanding that we were breaking new ground.\n"
+    },
+    {
+        name: "Founder – digital health company focussed on mental health",
+        testimonial: "HecoAnalytics  immediately understood our requirements and guided us through the NICE META Tool process as an introduction to help develop our evidence generation plan as we seek to move our solution from our trust to users nationally.\n"
+    },
+    {
+        name: "CTO  – digital health company working in diabetes",
+        testimonial: "HecoAnalytics has an understanding of all aspects relevant to medtech start-ups developing new products not just health economics but the impact of regulations, funding requirements and software development making the whole interaction more valuable than a traditional health economic provider.\n"
     },
 ]
 
