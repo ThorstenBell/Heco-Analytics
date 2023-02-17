@@ -240,8 +240,8 @@ nav {
 }
 
 #primary-nav li a:hover {
-    color: var(--primary);
-    background: var(--primary-accent);
+    color: var(--primary-accent);
+    background: var(--orange-2);
 }
 
 .search-label {
@@ -415,18 +415,18 @@ section {
 }
 
 .testimonial-block {
-    display: grid;
-    gap: 60px;
     min-height: 800px;
 }
 
 .testimonial-block .tag-line {
     color: var(--white-1);
+    margin-bottom: 24px;
 }
 
 .testimonial-block .zmdi-quote {
     color: var(--white-1);
     font-size: 66px;
+    margin-bottom: 24px;
 }
 
 #testimonial-text {
@@ -435,6 +435,8 @@ section {
     line-height: 42px;
     color: var(--white-1);
     position: relative;
+    margin-bottom: 24px;
+    padding: 0 24px;
 }
 
 #testimonial-name {
@@ -460,8 +462,19 @@ section {
 }
 
 .testimonial-arrows button i {
-    color: #D16726;
+    color: var(--primary-accent);
     font-size: 72px;
+}
+
+.testimonial-arrows button:hover i {
+    color: var(--orange-2);
+}
+
+#testimonial-indicators {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
 }
 
 .more-info .tag-line {
@@ -540,7 +553,23 @@ footer {
     color: var(--primary);
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1400px) {
+    section {
+        padding: 50px 100px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    section {
+        padding: 50px 80px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    section {
+        padding: 50px 60px;
+    }
+
     h2 {
         font-size: 2.5em;
     }
@@ -570,15 +599,17 @@ footer {
         text-align: center;
         padding: 16px;
     }
-}
 
-@media screen and (max-width: 900px) {
     .header-text {
         font-size: 1.5em;
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
+    section {
+        padding: 50px 40px;
+    }
+
     .header-text {
         font-size: 1em;
     }
@@ -597,10 +628,21 @@ footer {
 
     .footer ul {
         width: 100%;
+        text-align: center;
+    }
+
+    .social-media {
+        text-align: center;
     }
 
     .tool-block {
         width: 100%;
         min-width: 100%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    section {
+        padding: 50px 20px;
     }
 }
