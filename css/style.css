@@ -58,17 +58,6 @@ h2 {
     color: var(--primary);
 }
 
-.tag-line {
-    font-weight: 500;
-    font-size: 1.25em;
-    line-height: 1;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    text-align: center;
-    margin: 10px 0;
-    color: var(--primary-accent);
-}
-
 p {
     font-weight: 400;
     font-size: 1.25em;
@@ -423,9 +412,15 @@ section {
 
 }
 
-.testimonial-block .tag-line {
+.tag-line {
     color: var(--white-1);
-    margin-bottom: 24px;
+    font-weight: 500;
+    font-size: 1.25em;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 10px 0 24px;
 }
 
 .testimonial-block .zmdi-quote {
