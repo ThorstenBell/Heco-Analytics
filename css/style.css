@@ -220,17 +220,46 @@ nav {
     align-items: center;
 }
 
-#primary-nav li a {
+.nav-btn {
     padding: 8px 16px;
-    color: var(--secondary);
+    color: #000000;
     text-decoration: none;
     border-radius: 4px;
     font-size: 16px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    height: 40px;
+    background: none;
 }
 
-#primary-nav li a:hover {
+.nav-btn.active {
+    color: var(--primary);
+}
+
+.nav-btn.join {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.nav-btn:hover {
     color: var(--primary-accent);
-    background: var(--orange-2);
+}
+
+.search-btn {
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    border: 0;
+    outline: 0;
+    font-size: 28px;
+    background: none;
+    color: black;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    color: var(--primary-accent);
 }
 
 .search-label {
@@ -277,7 +306,7 @@ nav {
     overflow-y: auto;
 }
 
-.btn-primary {
+.btn-big {
     border: none;
     text-decoration: none;
     cursor: pointer;
@@ -295,7 +324,7 @@ nav {
     text-transform: uppercase;
 }
 
-.btn-primary:hover {
+.btn-big:hover {
     background: var(--primary);
 }
 
@@ -321,16 +350,35 @@ nav {
     background: var(--primary);
 }
 
-header {
+#banner {
     box-shadow: var(--shadow);
-    background: var(--orange-2);
-    background: -webkit-radial-gradient(top, var(--orange-2) 0%, var(--primary) 25%);
-    background: radial-gradient(at bottom, var(--orange-2) 0%, var(--primary) 25%);
     padding: 100px var(--primary-padding);
     min-height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+#banner::before {
+    content: '';
+    position: absolute;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAJElEQVQYV2NkwAS+jGhivgwMDJuRBcECIEUwQbgATBBFACQIALoFBFPSYn6NAAAAAElFTkSuQmCC) repeat;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+#banner::after {
+    content: '';
+    background: #000;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
 }
 
 .header-text {
@@ -338,6 +386,7 @@ header {
     font-size: 2em;
     text-align: center;
     line-height: 1.2;
+    z-index: 1;
 }
 
 .header-text a i {
@@ -477,6 +526,17 @@ section {
     width: 100%;
 }
 
+#testimonial-indicators button {
+    background: none;
+    border: none;
+    outline: none;
+    color: #CC7947;
+}
+
+#testimonial-indicators button.active {
+    color: #7B4317;
+}
+
 .more-info .tag-line {
     color: var(--white-1);
 }
@@ -593,7 +653,7 @@ footer {
         margin: 8px;
     }
 
-    #primary-nav li a {
+    .nav-btn {
         font-size: 1.2em;
         width: 100%;
         text-align: center;
@@ -655,6 +715,7 @@ footer {
     #testimonial-text {
         font-size: 24px;
     }
+
     #testimonial-name {
         font-size: 18px;
     }

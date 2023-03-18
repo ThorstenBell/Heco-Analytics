@@ -22,6 +22,7 @@ const testimonials = [
     },
 ]
 
+// Navbar
 function hamburger(x) {
     x.classList.toggle("change");
     let navVisibility = document.getElementById('primary-nav').style.display;
@@ -42,6 +43,27 @@ for (let button of navButtons) {
     })
 }
 
+const sections = document.querySelectorAll("section");
+const navLi = document.querySelectorAll(".nav-btn");
+window.onscroll = () => {
+    let current = "";
+
+    sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        if (window.scrollY >= sectionTop - 141) {
+            current = section.getAttribute("id");
+        }
+    });
+
+    navLi.forEach((li) => {
+        li.classList.remove("active");
+        if (current && current.length > 0 && li.href && li.href.includes(current)) {
+            li.classList.add("active");
+        }
+    });
+};
+
+// Search
 function searchText() {
     const searchVal = document.getElementById('search').value;
     const searchResults = document.getElementById('searchResults');
@@ -98,6 +120,7 @@ window.addEventListener('resize', () => {
     }
 });
 
+// Scroll Offset
 (function (document, history, location) {
     const HISTORY_SUPPORT = !!(history && history.pushState);
 
@@ -179,6 +202,7 @@ window.addEventListener('resize', () => {
     );
 })(window.document, window.history, window.location);
 
+// Login Dialog
 const loginBtn = document.getElementById('login-btn');
 const loginDialog = document.getElementById('login-dialog');
 const loginForm = document.getElementById('login-form');
@@ -239,6 +263,23 @@ function formStyling(x) {
 formStyling(email);
 formStyling(password);
 
+// Header Image
+const header = document.getElementById('banner');
+let headerIndex = 1;
+
+const headerImage = () => {
+    header.style.backgroundImage = `url(images/banner/header${headerIndex}.jpg)`;
+    if (headerIndex < 4) {
+        headerIndex++;
+    } else {
+        headerIndex = 1;
+    }
+    setTimeout(headerImage, 5000);
+}
+
+headerImage()
+
+// Testimonials
 const testimonialName = document.getElementById('testimonial-name');
 const testimonialText = document.getElementById('testimonial-text');
 const previousTestimonial = document.getElementById('previous-testimonial');
@@ -255,9 +296,9 @@ function setTestimonialIndicators() {
     testimonials.forEach((testimonial, index) => {
         let buttonId = "indicator-" + index;
         if (index === testimonialIndex) {
-            testimonialIndicators.insertAdjacentHTML('beforeend', `<button type='button' id='${buttonId}'><i class='zmdi zmdi-circle'></i>\n</button>`);
+            testimonialIndicators.insertAdjacentHTML('beforeend', `<button type='button' class="active" title="${buttonId}" id='${buttonId}'><i class='zmdi zmdi-circle'></i>\n</button>`);
         } else {
-            testimonialIndicators.insertAdjacentHTML('beforeend', `<button type='button' id='${buttonId}'><i class='zmdi zmdi-circle-o'></i>\n</button>`);
+            testimonialIndicators.insertAdjacentHTML('beforeend', `<button type='button' title="${buttonId}" id='${buttonId}'><i class='zmdi zmdi-circle'></i>\n</button>`);
         }
         document.getElementById(buttonId).addEventListener('click', () => {
             testimonialIndex = index;
