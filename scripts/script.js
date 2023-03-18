@@ -44,7 +44,7 @@ for (let button of navButtons) {
 }
 
 const sections = document.querySelectorAll("section");
-const navLi = document.querySelectorAll(".nav-btn");
+const navLi = document.querySelectorAll(".btn-nav");
 window.onscroll = () => {
     let current = "";
 
@@ -203,7 +203,7 @@ window.addEventListener('resize', () => {
 })(window.document, window.history, window.location);
 
 // Login Dialog
-const loginBtn = document.getElementById('login-btn');
+const loginBtn = document.getElementById('btn-login');
 const loginDialog = document.getElementById('login-dialog');
 const loginForm = document.getElementById('login-form');
 const email = loginDialog.querySelector('#email');

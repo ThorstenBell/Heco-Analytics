@@ -32,7 +32,7 @@ html, body {
 }
 
 
-body {
+body, button {
     text-rendering: optimizeLegibility;
     font-family: 'Inter', sans-serif;
     font-size: 1em;
@@ -97,7 +97,7 @@ ol, ul {
     background-color: var(--white-1);
     border-radius: 4px;
     box-shadow: var(--shadow);
-    padding: 8px 16px 16px;
+    padding: 16px 24px;
     max-width: 400px;
     width: 100%;
 }
@@ -122,13 +122,13 @@ ol, ul {
 #login-dialog form ul li:not(:last-child) label {
     position: absolute;
     left: 8px;
-    top: 10px;
+    top: 14px;
 }
 
 #login-dialog form ul li:focus-within label, .filled label {
     color: var(--primary);
     left: 4px !important;
-    top: 6px !important;
+    top: 10px !important;
     font-size: 0.6em;
 }
 
@@ -150,8 +150,35 @@ ol, ul {
 
 #login-dialog form ul li:last-child {
     display: flex;
-    flex-direction: row-reverse;
+    justify-content: flex-end;
     margin-top: 16px;
+}
+
+.btn-cancel {
+    color: #000000;
+    text-decoration: none;
+    font-size: 16px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    background: none;
+    padding: 0;
+}
+
+.btn-confirm {
+    color: var(--primary-accent);
+    text-decoration: none;
+    font-size: 16px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    background: none;
+    padding: 0;
+    margin-left: 8px;
+}
+
+.btn-confirm:hover, .btn-cancel:hover {
+    color: var(--primary);
 }
 
 .form-error {
@@ -220,7 +247,7 @@ nav {
     align-items: center;
 }
 
-.nav-btn {
+.btn-nav {
     padding: 8px 16px;
     color: #000000;
     text-decoration: none;
@@ -233,20 +260,20 @@ nav {
     background: none;
 }
 
-.nav-btn.active {
+.btn-nav.active {
     color: var(--primary);
 }
 
-.nav-btn.join {
+.btn-nav.join {
     color: var(--primary);
     font-weight: 600;
 }
 
-.nav-btn:hover {
+.btn-nav:hover {
     color: var(--primary-accent);
 }
 
-.search-btn {
+.btn-search {
     height: 40px;
     width: 40px;
     border-radius: 100%;
@@ -258,7 +285,7 @@ nav {
     cursor: pointer;
 }
 
-.search-btn:hover {
+.btn-search:hover {
     color: var(--primary-accent);
 }
 
@@ -423,6 +450,7 @@ section {
     min-width: 340px;
     margin: 1%;
     position: relative;
+    box-shadow: var(--shadow);
 }
 
 .tool-block h3 {
@@ -449,10 +477,12 @@ section {
     border-radius: 20px;
     position: relative;
     text-align: center;
+    box-shadow: var(--shadow);
 }
 
 .more-info {
     padding: 50px;
+    box-shadow: var(--shadow);
 }
 
 .testimonial-block {
@@ -653,7 +683,7 @@ footer {
         margin: 8px;
     }
 
-    .nav-btn {
+    .btn-nav {
         font-size: 1.2em;
         width: 100%;
         text-align: center;
