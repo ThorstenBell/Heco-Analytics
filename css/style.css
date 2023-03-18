@@ -51,7 +51,7 @@ h1 {
 
 h2 {
     font-weight: 600;
-    font-size: 3.5em;
+    font-size: max(1.25em, min(3.5em, 4vw));
     line-height: 1;
     text-align: center;
     margin: 0;
@@ -60,7 +60,7 @@ h2 {
 
 p {
     font-weight: 400;
-    font-size: 1.25em;
+    font-size: max(0.8em, min(1.25em, 3vw));
     line-height: 1.5;
     color: #000000;
 }
@@ -338,7 +338,7 @@ nav {
     text-decoration: none;
     cursor: pointer;
     font-weight: 500;
-    font-size: 1.25em;
+    font-size: max(0.8em, min(1.25em, 3vw));
     padding: 0 50px;
     width: -moz-fit-content;
     width: fit-content;
@@ -360,7 +360,7 @@ nav {
     text-decoration: none;
     cursor: pointer;
     font-weight: 500;
-    font-size: 1.25em;
+    font-size: max(0.8em, min(1.25em, 3vw));
     padding: 0 30px;
     width: -moz-fit-content;
     width: fit-content;
@@ -428,6 +428,10 @@ section {
     max-width: 1440px;
     margin: 35px auto;
     padding: 50px 120px;
+}
+
+section li {
+    font-size: max(0.8em, min(1.25em, 3vw));
 }
 
 .actions {
@@ -573,10 +577,10 @@ section {
 
 .explore-tools {
     font-weight: 600;
-    font-size: 5em;
+    font-size: max(2em, min(5em, 5.333vw));
     color: var(--white-1);
     margin: 0;
-    line-height: 2.5em;
+    line-height: 1.5;
 }
 
 footer {
@@ -660,10 +664,6 @@ footer {
         padding: 50px 60px;
     }
 
-    h2 {
-        font-size: 2.5em;
-    }
-
     #hamburger {
         display: inline;
     }
@@ -712,16 +712,9 @@ footer {
         font-size: 1em;
     }
 
-    h2 {
-        font-size: 1.5em;
-    }
-
-    section p, section li {
-        font-size: 0.8em;
-    }
-
     .footer {
         grid-template-columns: 1fr;
+        padding: 0;
     }
 
     .footer ul {
