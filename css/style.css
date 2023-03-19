@@ -348,6 +348,18 @@ nav {
     list-style: none;
 }
 
+#searchResults li {
+    cursor: pointer;
+}
+
+#searchResults li a {
+    color: black;
+}
+
+#searchResults li:hover a {
+    color: var(--primary);
+}
+
 .found {
     background: var(--primary);
     color: #FFFFFF;

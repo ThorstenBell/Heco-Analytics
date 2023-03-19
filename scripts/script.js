@@ -123,17 +123,14 @@ function searchText() {
                         searchResults.style.display = "block";
                         const index = node.nodeValue.indexOf(searchVal);
 
-                        // Found Values List
-                        const entry = document.createElement('li');
-                        const link = document.createElement("A");
-                        link.setAttribute("href", '#found' + searchResultIndex)
-                        entry.appendChild(link);
-                        link.appendChild(document.createTextNode(node.nodeValue.substring(node.nodeValue.indexOf(searchVal) - 10, node.nodeValue.indexOf(searchVal) + searchVal.length + 10)));
-                        searchResults.appendChild(entry);
-
                         // Highlight found text
-                        let foundElem = `<span class="found" id="found${searchResultIndex}">${searchVal}</span>`;
+                        const foundElem = `<span class="found" id="found${searchResultIndex}">${searchVal}</span>`;
                         node.parentNode.innerHTML = node.nodeValue.slice(0, index) + foundElem + node.nodeValue.slice(index + searchVal.length);
+
+                        // Found elements list
+                        const newElem = document.getElementById(`found${searchResultIndex}`);
+                        searchResults.innerHTML += `<li onclick="window.scrollTo({top: ${newElem.offsetTop - 120}, behavior: 'smooth'})"><a>${node.nodeValue.substring(node.nodeValue.indexOf(searchVal) - 10, node.nodeValue.indexOf(searchVal) + searchVal.length + 10)}</a></li>`;
+
                         searchResultIndex++;
                     }
                     break;
@@ -154,7 +151,7 @@ function hideResults() {
 
     const anchorScrolls = {
         ANCHOR_REGEX: /^#[^ ]+$/,
-        OFFSET_HEIGHT_PX: 120,
+        OFFSET_HEIGHT_PX: 50,
 
         init: function () {
             this.scrollToCurrent();
