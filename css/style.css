@@ -443,7 +443,7 @@ nav {
 
 .header-text {
     margin: 0;
-    font-size: 2em;
+    font-size: clamp(1em, 5vw, 4em);
     text-align: center;
     line-height: 1.2;
     z-index: 1;
@@ -610,7 +610,7 @@ section li {
 
 .explore-tools {
     font-weight: 600;
-    font-size: clamp(2em, 5.333vw, 5em);
+    font-size: clamp(2em, 5.333vw, 4em);
     color: var(--white-1);
     line-height: 1.5;
     margin: 0 0 16px;
@@ -723,10 +723,6 @@ footer {
         padding: 16px;
     }
 
-    .header-text {
-        font-size: 1.5em;
-    }
-
     #testimonial-text {
         font-size: 30px;
     }
@@ -739,10 +735,6 @@ footer {
 @media screen and (max-width: 768px) {
     section {
         padding: 50px 40px;
-    }
-
-    .header-text {
-        font-size: 1em;
     }
 
     .footer {

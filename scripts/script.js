@@ -151,16 +151,11 @@ function hideResults() {
 
     const anchorScrolls = {
         ANCHOR_REGEX: /^#[^ ]+$/,
-        OFFSET_HEIGHT_PX: 50,
 
         init: function () {
             this.scrollToCurrent();
             window.addEventListener('hashchange', this.scrollToCurrent.bind(this));
             document.body.addEventListener('click', this.delegateAnchors.bind(this));
-        },
-
-        getFixedOffset: function () {
-            return this.OFFSET_HEIGHT_PX;
         },
 
         scrollIfAnchor: function (href, pushToHistory) {
@@ -174,7 +169,7 @@ function hideResults() {
 
             if (match) {
                 rect = match.getBoundingClientRect();
-                anchorOffset = window.scrollY + rect.top - this.getFixedOffset();
+                anchorOffset = window.scrollY + rect.top - 50;
                 window.scrollTo(window.scrollX, anchorOffset);
 
                 // Add the state to history as-per normal anchor links
