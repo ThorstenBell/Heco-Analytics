@@ -22,7 +22,7 @@ const testimonials = [
     },
 ]
 
-// Navbar
+// Mobile Nav
 function hamburger(x) {
     x.classList.toggle("change");
     let navVisibility = document.getElementById('primary-nav').style.display;
@@ -36,32 +36,16 @@ function hamburger(x) {
 const navButtons = document.getElementsByClassName('btn-nav');
 for (let button of navButtons) {
     button.addEventListener('click', () => {
-        if (window.innerWidth <= 1000) {
-            document.getElementById('hamburger').classList.toggle("change");
-            document.getElementById('primary-nav').style.display = 'none';
-        }
+        toggleMobileNav();
     })
 }
 
-const sections = document.querySelectorAll("section");
-const navLi = document.querySelectorAll(".btn-nav");
-window.onscroll = () => {
-    let current = "";
-
-    sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        if (window.scrollY >= sectionTop - 141) {
-            current = section.getAttribute("id");
-        }
-    });
-
-    navLi.forEach((li) => {
-        li.classList.remove("active");
-        if (current && current.length > 0 && li.href && li.href.includes(current)) {
-            li.classList.add("active");
-        }
-    });
-};
+function toggleMobileNav() {
+    if (window.innerWidth <= 1000) {
+        document.getElementById('hamburger').classList.toggle("change");
+        document.getElementById('primary-nav').style.display = 'none';
+    }
+}
 
 window.addEventListener('resize', () => {
     if (window.innerWidth > 1000) {
@@ -72,18 +56,42 @@ window.addEventListener('resize', () => {
     }
 });
 
+// Active Nav Links
+const sections = document.querySelectorAll("section");
+window.onscroll = () => {
+    let current = "";
+
+    sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        if (window.scrollY >= sectionTop - 141) {
+            current = section.getAttribute("id");
+        }
+    });
+
+    for (let button of navButtons) {
+        button.classList.remove("active");
+        if (current && current.length > 0 && button.href && button.href.includes(current)) {
+            button.classList.add("active");
+        }
+    }
+};
+
 // Search
 const searchBtn = document.getElementById('btnSearch');
 const searchContainer = document.getElementById('searchContainer');
 
-searchBtn.addEventListener('click', () => {
-    if (searchContainer.style.display === 'none') {
-        searchContainer.style.display = 'flex'
-    } else {
+function toggleSearch() {
+    if (searchContainer.style.display === 'flex') {
         searchContainer.style.display = 'none'
+    } else {
+        searchContainer.style.display = 'flex'
     }
-    clearSpans();
+}
 
+searchBtn.addEventListener('click', () => {
+    toggleSearch();
+    clearSpans();
+    toggleMobileNav();
 })
 
 const clearSpans = () => {

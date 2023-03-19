@@ -295,7 +295,7 @@ nav {
     flex-direction: column;
     top: 54px;
     left: 0;
-    z-index: 2;
+    z-index: 3;
     width: 100%;
     padding: var(--primary-padding);
 }
@@ -372,10 +372,8 @@ nav {
     cursor: pointer;
     font-weight: 500;
     font-size: clamp(0.8em, 3vw, 1.25em);
-    padding: 0 50px;
-    width: -moz-fit-content;
-    width: fit-content;
-    height: 70px;
+    padding: 0 clamp(2em, 5vw, 3em);
+    height: clamp(50px, 10vw, 70px);
     display: flex;
     align-items: center;
     border-radius: 35px;
@@ -443,7 +441,7 @@ nav {
 
 .header-text {
     margin: 0;
-    font-size: clamp(1em, 5vw, 4em);
+    font-size: clamp(1em, 2vw, 3em);
     text-align: center;
     line-height: 1.2;
     z-index: 1;
