@@ -33,7 +33,7 @@ function hamburger(x) {
     }
 }
 
-const navButtons = document.getElementsByClassName('navBtn');
+const navButtons = document.getElementsByClassName('btn-nav');
 for (let button of navButtons) {
     button.addEventListener('click', () => {
         if (window.innerWidth <= 1000) {
@@ -63,7 +63,38 @@ window.onscroll = () => {
     });
 };
 
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 1000) {
+        document.getElementById('primary-nav').style.display = 'flex';
+    } else {
+        document.getElementById('primary-nav').style.display = 'none';
+        document.getElementById('hamburger').classList.remove("change");
+    }
+});
+
 // Search
+const searchBtn = document.getElementById('btnSearch');
+const searchContainer = document.getElementById('searchContainer');
+
+searchBtn.addEventListener('click', () => {
+    if (searchContainer.style.display === 'none') {
+        searchContainer.style.display = 'flex'
+    } else {
+        searchContainer.style.display = 'none'
+    }
+    clearSpans();
+
+})
+
+const clearSpans = () => {
+    let spanElements = document.getElementsByTagName("span");
+
+    for (let i = spanElements.length - 1; i >= 0; i--) {
+        let span = spanElements[i];
+        span.outerHTML = span.innerHTML;
+    }
+}
+
 function searchText() {
     const searchVal = document.getElementById('search').value;
     const searchResults = document.getElementById('searchResults');
@@ -71,12 +102,12 @@ function searchText() {
     searchResults.innerHTML = "";
     let searchResultIndex = 1;
 
-    document.querySelectorAll(`[id^=\"found\"]`).forEach(elem => {
-        elem.removeAttribute("id");
-    });
+    clearSpans();
 
-    if (searchVal.length > 2 && document.body.innerHTML.includes(searchVal)) {
-        walk(document.body);
+    if (searchVal.length > 1 && document.body.innerHTML.includes(searchVal)) {
+        sections.forEach(section => {
+            walk(section);
+        })
 
         function walk(node) {
             let child;
@@ -88,15 +119,21 @@ function searchText() {
                     }
                     break;
                 case 3:
-                    if (node.nodeValue.indexOf(searchVal) !== -1 && node.parentNode.classList.value !== "navBtn") {
+                    if (node.nodeValue.indexOf(searchVal) !== -1) {
                         searchResults.style.display = "block";
-                        node.parentNode.setAttribute('id', 'found' + searchResultIndex);
+                        const index = node.nodeValue.indexOf(searchVal);
+
+                        // Found Values List
                         const entry = document.createElement('li');
                         const link = document.createElement("A");
                         link.setAttribute("href", '#found' + searchResultIndex)
                         entry.appendChild(link);
                         link.appendChild(document.createTextNode(node.nodeValue.substring(node.nodeValue.indexOf(searchVal) - 10, node.nodeValue.indexOf(searchVal) + searchVal.length + 10)));
                         searchResults.appendChild(entry);
+
+                        // Highlight found text
+                        let foundElem = `<span class="found" id="found${searchResultIndex}">${searchVal}</span>`;
+                        node.parentNode.innerHTML = node.nodeValue.slice(0, index) + foundElem + node.nodeValue.slice(index + searchVal.length);
                         searchResultIndex++;
                     }
                     break;
@@ -111,47 +148,24 @@ function hideResults() {
     }, 300);
 }
 
-window.addEventListener('resize', () => {
-    if (window.innerWidth > 1000) {
-        document.getElementById('primary-nav').style.display = 'flex';
-    } else {
-        document.getElementById('primary-nav').style.display = 'none';
-        document.getElementById('hamburger').classList.remove("change");
-    }
-});
-
 // Scroll Offset
 (function (document, history, location) {
     const HISTORY_SUPPORT = !!(history && history.pushState);
 
     const anchorScrolls = {
         ANCHOR_REGEX: /^#[^ ]+$/,
-        OFFSET_HEIGHT_PX: 50,
+        OFFSET_HEIGHT_PX: 120,
 
-        /**
-         * Establish events, and fix initial scroll position if a hash is provided.
-         */
         init: function () {
             this.scrollToCurrent();
             window.addEventListener('hashchange', this.scrollToCurrent.bind(this));
             document.body.addEventListener('click', this.delegateAnchors.bind(this));
         },
 
-        /**
-         * Return the offset amount to deduct from the normal scroll position.
-         * Modify as appropriate to allow for dynamic calculations
-         */
         getFixedOffset: function () {
             return this.OFFSET_HEIGHT_PX;
         },
 
-        /**
-         * If the provided href is an anchor which resolves to an element on the
-         * page, scroll to it.
-         * @param  {String} href
-         * @param  {Boolean} pushToHistory
-         * @return {Boolean} - Was the href an anchor.
-         */
         scrollIfAnchor: function (href, pushToHistory) {
             let match, rect, anchorOffset;
 
@@ -175,16 +189,10 @@ window.addEventListener('resize', () => {
             return !!match;
         },
 
-        /**
-         * Attempt to scroll to the current location's hash.
-         */
         scrollToCurrent: function () {
             this.scrollIfAnchor(window.location.hash, false);
         },
 
-        /**
-         * If the click event's target was an anchor, fix the scroll position.
-         */
         delegateAnchors: function (e) {
             const elem = e.target;
 

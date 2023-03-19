@@ -75,18 +75,18 @@
                 <a class="btn-nav join" href="https://www.linkedin.com/groups/8431494/" target="_blank">Join</a>
             </li>
             <li>
-                <button class="btn-search" title="Search" type="button"><i class="zmdi zmdi-search"></i></button>
+                <button id="btnSearch" class="btn-search" title="Search" type="button"><i class="zmdi zmdi-search"></i></button>
             </li>
         </ul>
     </div>
 </nav>
-<!--<div class="search">-->
-<!--    <label class="search-label" for="search">Search</label>-->
-<!--    <input id="search" autocomplete="off" type="text" onkeyup="searchText()" onclick="searchText()"-->
-<!--           onblur="hideResults()"-->
-<!--           placeholder="Search..">-->
-<!--    <ul id="searchResults"></ul>-->
-<!--</div>-->
+<div id="searchContainer">
+    <label class="search-label" for="search">Search</label>
+    <input id="search" autocomplete="off" type="text" onkeyup="searchText()" onclick="searchText()"
+           onblur="hideResults()"
+           placeholder="Search..">
+    <ul id="searchResults"></ul>
+</div>
 <header id="banner">
     <div class="header-text">
         <h1>Analytics Software for<br>Evidence based Healthcare</h1>

@@ -51,7 +51,7 @@ h1 {
 
 h2 {
     font-weight: 600;
-    font-size: max(1.25em, min(3.5em, 4vw));
+    font-size: clamp(1.25em, 4vw, 3.5em);
     line-height: 1;
     text-align: center;
     margin: 0;
@@ -60,7 +60,7 @@ h2 {
 
 p {
     font-weight: 400;
-    font-size: max(0.8em, min(1.25em, 3vw));
+    font-size: clamp(0.8em, 3vw, 1.25em);
     line-height: 1.5;
     color: #000000;
 }
@@ -289,11 +289,24 @@ nav {
     color: var(--primary-accent);
 }
 
+#searchContainer {
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    top: 54px;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    padding: var(--primary-padding);
+}
+
 .search-label {
     display: none;
 }
 
 #search {
+    max-width: 1200px;
+    margin: auto;
     padding: 4px 8px;
     border: 2px solid var(--secondary);
     border-radius: 4px;
@@ -302,7 +315,7 @@ nav {
     font-size: 16px;
     font-weight: 400;
     color: var(--secondary);
-    margin: 0 var(--primary-padding);
+    width: 100%;
 }
 
 #search:focus, #search:active {
@@ -322,15 +335,23 @@ nav {
 
 #searchResults {
     display: none;
-    position: absolute;
     background: var(--white-1);
     padding: 8px var(--primary-padding);
     border: 1px solid var(--secondary);
     border-radius: 4px;
-    top: 44px;
+    width: 100%;
+    max-width: 1200px;
     box-shadow: var(--shadow);
     max-height: 200px;
     overflow-y: auto;
+    margin: auto;
+    list-style: none;
+}
+
+.found {
+    background: var(--primary);
+    color: #FFFFFF;
+    font-weight: 600;
 }
 
 .btn-big {
@@ -338,7 +359,7 @@ nav {
     text-decoration: none;
     cursor: pointer;
     font-weight: 500;
-    font-size: max(0.8em, min(1.25em, 3vw));
+    font-size: clamp(0.8em, 3vw, 1.25em);
     padding: 0 50px;
     width: -moz-fit-content;
     width: fit-content;
@@ -360,7 +381,7 @@ nav {
     text-decoration: none;
     cursor: pointer;
     font-weight: 500;
-    font-size: max(0.8em, min(1.25em, 3vw));
+    font-size: clamp(0.8em, 3vw, 1.25em);
     padding: 0 30px;
     width: -moz-fit-content;
     width: fit-content;
@@ -431,7 +452,7 @@ section {
 }
 
 section li {
-    font-size: max(0.8em, min(1.25em, 3vw));
+    font-size: clamp(0.8em, 3vw, 1.25em);
 }
 
 .actions {
@@ -577,10 +598,10 @@ section li {
 
 .explore-tools {
     font-weight: 600;
-    font-size: max(2em, min(5em, 5.333vw));
+    font-size: clamp(2em, 5.333vw, 5em);
     color: var(--white-1);
-    margin: 0;
     line-height: 1.5;
+    margin: 0 0 16px;
 }
 
 footer {
