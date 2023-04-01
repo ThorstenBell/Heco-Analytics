@@ -774,10 +774,16 @@ footer {
 
     .testimonial-block {
         min-height: 600px;
+        padding: 50px 16px 100px;
+    }
+
+    .testimonial-arrows {
+        display: none;
     }
 
     #testimonial-text {
         font-size: 16px;
+        padding: 0;
     }
 
     #testimonial-name {
